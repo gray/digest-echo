@@ -1,0 +1,9 @@
+Digest-ECHO-*
+ECHO.bs
+ECHO.c
+ECHO.o
+MANIFEST.bak
+Makefile
+Makefile.old
+blib/
+pm_to_blib
