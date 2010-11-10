@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More tests => 19;
+use Test::More tests => 68;
 use Digest::ECHO qw(echo_512 echo_512_hex);
 
 my $len = 0;
@@ -23,15 +23,9 @@ while (my $line = <DATA>) {
             "echo_512: $len bits of $msg"
         );
     }
-    else {
-        TODO:
-        eval {
-            local $TODO = 'add_bits is not yet implemented';
-            my $md = Digest::ECHO->new(512)->add_bits($data, $len)
-                ->hexdigest;
-            is($md, $digest, "new/add_bits/hexdigest: $msg");
-        };
-    }
+
+    my $md = Digest::ECHO->new(512)->add_bits($data, $len)->hexdigest;
+    is($md, $digest, "new/add_bits/hexdigest: $msg");
 }
 continue { $len++ }
 
