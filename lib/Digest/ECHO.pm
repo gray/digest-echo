@@ -75,8 +75,8 @@ Digest::ECHO - Perl interface to the ECHO digest algorithm
     use Digest::ECHO qw(echo_256 echo_256_hex echo_256_base64);
 
     $digest = echo_256($data);
-    $digest = echo_hex_256($data);
-    $digest = echo_base64_256($data);
+    $digest = echo_256_hex($data);
+    $digest = echo_256_base64($data);
 
     # Object-oriented interface
     use Digest::ECHO;
