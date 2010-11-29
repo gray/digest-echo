@@ -25,33 +25,6 @@ our @EXPORT_OK = qw(
     echo_512 echo_512_hex echo_512_base64
 );
 
-# TODO: convert to C.
-sub echo_224_hex  { unpack 'H*', echo_224(@_) }
-sub echo_256_hex  { unpack 'H*', echo_256(@_) }
-sub echo_384_hex  { unpack 'H*', echo_384(@_) }
-sub echo_512_hex  { unpack 'H*', echo_512(@_) }
-
-sub echo_224_base64 {
-    my $b64 = MIME::Base64::encode(echo_224(@_), '');
-    $b64 =~ s/=+$//g;
-    return $b64;
-}
-sub echo_256_base64 {
-    my $b64 = MIME::Base64::encode(echo_256(@_), '');
-    $b64 =~ s/=+$//g;
-    return $b64;
-}
-sub echo_384_base64 {
-    my $b64 = MIME::Base64::encode(echo_384(@_), '');
-    $b64 =~ s/=+$//g;
-    return $b64;
-}
-sub echo_512_base64 {
-    my $b64 = MIME::Base64::encode(echo_512(@_), '');
-    $b64 =~ s/=+$//g;
-    return $b64;
-}
-
 sub add_bits {
     my ($self, $data, $bits) = @_;
     if (2 == @_) {
