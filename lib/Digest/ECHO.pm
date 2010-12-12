@@ -63,8 +63,9 @@ Digest::ECHO - Perl interface to the ECHO digest algorithm
 
 =head1 DESCRIPTION
 
-The C<Digest::ECHO> module provides an interface to the ECHO message
-digest algorithm. ECHO is a candidate in the NIST SHA-3 competition.
+The C<Digest::ECHO> module provides an interface to the ECHO message digest
+algorithm. ECHO was a candidate in the NIST SHA-3 competition but did
+progress beyond round 2.
 
 This interface follows the conventions set forth by the C<Digest> module.
 
